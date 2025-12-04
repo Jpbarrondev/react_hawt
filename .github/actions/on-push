@@ -1,17 +1,17 @@
 name: 'On Push'
 
-On:
+on:
   push:
     branches:
       - main
 
 description: 'Checkout repository and run build'
 runs:
-    using: 'composite'
-    steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-            with:
-                node-version: '18'
-        - run: npm run build
-            shell: bash
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - run: npm run build
+      shell: bash
