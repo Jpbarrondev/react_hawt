@@ -4,13 +4,16 @@
   "private": true,
   "description": "React application mirroring the Hawthorne Guild Guides. Built with TypeScript, Material UI, SCSS modules, React Query, Preact signals, and Zustand. Configured for GitHub Pages deployment.",
   "scripts": {
-    "start": "vite", 
-    "build": "vite build", 
-    "preview": "vite preview", 
-    "lint": "eslint . --ext .ts,.tsx", 
-    "format": "prettier --write .", 
-    "prepare": "husky install", 
-    "precommit": "npm run lint && npm run format", 
+    "start": "vite",
+    "prebuild": "npm run format && npm run lint",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix \"src/**/*.{ts,tsx,js,jsx}\"",
+    "lint-check": "eslint . --ext .ts,.tsx --max-warnings=0",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "prepare": "husky install",
+    "precommit": "npm run lint-check && npm run format-check",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -30,20 +33,25 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^4.3.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.1",
     "sass": "^1.70.0",
     "typescript": "^5.1.6",
-    "vite": "^5.0.8",
-    "gh-pages": "^6.1.0"
+    "vite": "^7.2.6",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "homepage": "/hawthorne-guides/",
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": ["eslint --fix", "prettier --write"]
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
