@@ -1,0 +1,49 @@
+{
+  "name": "hawthorne-guides",
+  "version": "0.1.0",
+  "private": true,
+  "description": "React application mirroring the Hawthorne Guild Guides. Built with TypeScript, Material UI, SCSS modules, React Query, Preact signals, and Zustand. Configured for GitHub Pages deployment.",
+  "scripts": {
+    "start": "vite", 
+    "build": "vite build", 
+    "preview": "vite preview", 
+    "lint": "eslint . --ext .ts,.tsx", 
+    "format": "prettier --write .", 
+    "prepare": "husky install", 
+    "precommit": "npm run lint && npm run format", 
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.7",
+    "@preact/signals-react": "^1.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.16.0",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.1",
+    "sass": "^1.70.0",
+    "typescript": "^5.1.6",
+    "vite": "^5.0.8",
+    "gh-pages": "^6.1.0"
+  },
+  "homepage": "/hawthorne-guides/",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": ["eslint --fix", "prettier --write"]
+  }
+}
