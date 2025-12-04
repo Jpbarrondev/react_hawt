@@ -42,7 +42,7 @@ function AppRouter() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename="/Guides/">
           <Layout>
             <Routes>
               {/* Catch all routes handled by PageContent; wildcard param collects remainder of path */}

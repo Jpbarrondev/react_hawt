@@ -1,0 +1,5 @@
+# Site settings
+title: "Hawt Test"
+description: "React test"
+baseurl: "/Guides" 
+url: "https://jpbarrondev.github.io/react_hawt/" 
